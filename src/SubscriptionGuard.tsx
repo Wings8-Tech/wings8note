@@ -123,7 +123,7 @@ function isNonEmptyToken(value: string | null | undefined): value is string {
 // après son refresh), quelques tentatives espacées. Renvoie null si rien
 // de neuf n'arrive.
 async function waitForManagedTokenRefresh(staleToken: string): Promise<string | null> {
-  for (let attempt = 0; attempt < 3; attempt++) {
+  for (let attempt = 0; attempt < 15; attempt++) {
     await new Promise(resolve => setTimeout(resolve, 4000));
     const token = await getAccessToken(staleToken);
     if (isNonEmptyToken(token) && token !== staleToken) {
