@@ -1,10 +1,10 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Distributed under the license specified in the root directory of this project.
 
 /**
  * Service client pour l'API Mistral AI — connexion 100 % locale.
  *
- * Aucun compte JemaNote n'est requis : l'utilisateur clique « Se connecter »,
+ * Aucun compte Wings8Note n'est requis : l'utilisateur clique « Se connecter »,
  * colle sa clé Mistral une seule fois ; elle est validée puis stockée
  * uniquement sur SON appareil (IndexedDB), et les appels partent directement
  * vers api.mistral.ai. La clé n'est jamais envoyée à nos serveurs ni
@@ -78,20 +78,20 @@ export const AI_MODELS: ReadonlyArray<{ id: string; label: string }> = [
 
 // Store local des credentials (clé Mistral de l'utilisateur).
 const aiCredentials = localforage.createInstance({
-  name: 'Jemanote',
+  name: 'Wings8note',
   storeName: 'ai_credentials',
   description: 'Connexion au compte Mistral (stockage local)',
 });
 
 // Configure IndexedDB pour le cache IA
 const aiCache = localforage.createInstance({
-  name: 'Jemanote',
+  name: 'Wings8note',
   storeName: 'ai_cache',
   description: 'Cache pour les réponses IA',
 });
 
 const summaryHistory = localforage.createInstance({
-  name: 'Jemanote',
+  name: 'Wings8note',
   storeName: 'summary_history',
   description: 'Historique des résumés IA',
 });

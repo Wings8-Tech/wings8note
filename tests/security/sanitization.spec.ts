@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Input Sanitization Tests
 
 import { test, expect } from '@playwright/test';

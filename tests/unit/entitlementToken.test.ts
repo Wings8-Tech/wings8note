@@ -114,7 +114,7 @@ describe('entitlementToken (vérification hors-ligne du JWT signé)', () => {
 
   test('getVerifiedSignedEntitlement lit et vérifie le jeton en cache', async () => {
     const jwt = await makeJwt(key, proClaims());
-    localStorage.setItem('jemaos_entitlement_jwt', jwt);
+    localStorage.setItem('wings8os_entitlement_jwt', jwt);
     const claims = await getVerifiedSignedEntitlement();
     expect(claims?.apps_allowed).toBe(true);
 
@@ -128,6 +128,6 @@ describe('entitlementToken (vérification hors-ligne du JWT signé)', () => {
 
     const claims = await storeSignedEntitlementFromServer('access-token');
     expect(claims?.apps_allowed).toBe(true);
-    expect(localStorage.getItem('jemaos_entitlement_jwt')).toBe(jwt);
+    expect(localStorage.getItem('wings8os_entitlement_jwt')).toBe(jwt);
   });
 });

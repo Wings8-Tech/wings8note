@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Distributed under the license specified in the root directory of this project.
 
 import { Download, X } from 'lucide-react';
@@ -102,7 +102,7 @@ export default function InstallPrompt() {
 
           <div className="flex-1 min-w-0">
             <h3 className="font-semibold text-sm laptop:text-base text-neutral-900 dark:text-neutral-100 mb-1">
-              {t('installJemanote')}
+              {t('installWings8note')}
             </h3>
             <p className="text-xs laptop:text-sm text-neutral-600 dark:text-neutral-400 mb-3">
               {t('installDesc')}

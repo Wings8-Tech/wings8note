@@ -1,7 +1,7 @@
 {
   "metrics": [
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\utils\\performance.ts",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\utils\\performance.ts",
       "lines": {
         "total": 453,
         "code": 298,
@@ -16,7 +16,7 @@
       "technicalDebt": 23
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\types\\index.ts",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\types\\index.ts",
       "lines": {
         "total": 129,
         "code": 114,
@@ -31,7 +31,7 @@
       "technicalDebt": 7.724806201550388
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\services\\linkDetectionService.ts",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\services\\linkDetectionService.ts",
       "lines": {
         "total": 252,
         "code": 180,
@@ -46,7 +46,7 @@
       "technicalDebt": 4.5
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\services\\graphIndexer.ts",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\services\\graphIndexer.ts",
       "lines": {
         "total": 296,
         "code": 190,
@@ -61,7 +61,7 @@
       "technicalDebt": 12
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\services\\ai\\mistralService.ts",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\services\\ai\\mistralService.ts",
       "lines": {
         "total": 587,
         "code": 421,
@@ -76,7 +76,7 @@
       "technicalDebt": 26.5
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\lib\\wikiLinks.ts",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\lib\\wikiLinks.ts",
       "lines": {
         "total": 87,
         "code": 62,
@@ -91,7 +91,7 @@
       "technicalDebt": 0
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\lib\\utils.ts",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\lib\\utils.ts",
       "lines": {
         "total": 10,
         "code": 5,
@@ -106,7 +106,7 @@
       "technicalDebt": 0
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\lib\\supabase.ts",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\lib\\supabase.ts",
       "lines": {
         "total": 35,
         "code": 27,
@@ -121,7 +121,7 @@
       "technicalDebt": 0.7142857142857144
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\lib\\localStorage.ts",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\lib\\localStorage.ts",
       "lines": {
         "total": 496,
         "code": 392,
@@ -136,7 +136,7 @@
       "technicalDebt": 33.16532258064516
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\lib\\audioWidgetExtension.ts",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\lib\\audioWidgetExtension.ts",
       "lines": {
         "total": 118,
         "code": 96,
@@ -151,7 +151,7 @@
       "technicalDebt": 3.305084745762712
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\lib\\aiContextMenu.ts",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\lib\\aiContextMenu.ts",
       "lines": {
         "total": 40,
         "code": 23,
@@ -166,7 +166,7 @@
       "technicalDebt": 0
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\hooks\\useNotes.ts",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\hooks\\useNotes.ts",
       "lines": {
         "total": 166,
         "code": 138,
@@ -181,7 +181,7 @@
       "technicalDebt": 9.69277108433735
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\hooks\\useLocalNotes.ts",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\hooks\\useLocalNotes.ts",
       "lines": {
         "total": 642,
         "code": 487,
@@ -196,7 +196,7 @@
       "technicalDebt": 42.09345794392523
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\hooks\\useAuth.ts",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\hooks\\useAuth.ts",
       "lines": {
         "total": 126,
         "code": 102,
@@ -211,7 +211,7 @@
       "technicalDebt": 5.619047619047619
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\main.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\main.tsx",
       "lines": {
         "total": 30,
         "code": 21,
@@ -226,7 +226,7 @@
       "technicalDebt": 0
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\App.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\App.tsx",
       "lines": {
         "total": 404,
         "code": 350,
@@ -241,7 +241,7 @@
       "technicalDebt": 14.405940594059405
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\hooks\\use-mobile.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\hooks\\use-mobile.tsx",
       "lines": {
         "total": 25,
         "code": 17,
@@ -256,7 +256,7 @@
       "technicalDebt": 1
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\contexts\\ThemeContext.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\contexts\\ThemeContext.tsx",
       "lines": {
         "total": 58,
         "code": 42,
@@ -271,7 +271,7 @@
       "technicalDebt": 1.5517241379310347
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\components\\InstallPrompt.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\components\\InstallPrompt.tsx",
       "lines": {
         "total": 138,
         "code": 104,
@@ -286,7 +286,7 @@
       "technicalDebt": 1.014492753623189
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\components\\ErrorBoundary.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\components\\ErrorBoundary.tsx",
       "lines": {
         "total": 39,
         "code": 30,
@@ -301,7 +301,7 @@
       "technicalDebt": 2.435897435897436
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\components\\workspace\\WorkspaceView.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\components\\workspace\\WorkspaceView.tsx",
       "lines": {
         "total": 616,
         "code": 507,
@@ -316,7 +316,7 @@
       "technicalDebt": 24.59090909090909
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\components\\ui\\WaveformPlayer.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\components\\ui\\WaveformPlayer.tsx",
       "lines": {
         "total": 208,
         "code": 173,
@@ -331,7 +331,7 @@
       "technicalDebt": 8.557692307692307
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\components\\timeline\\TimelineView.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\components\\timeline\\TimelineView.tsx",
       "lines": {
         "total": 167,
         "code": 143,
@@ -346,7 +346,7 @@
       "technicalDebt": 4.002994011976048
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\components\\timeline\\DateFilter.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\components\\timeline\\DateFilter.tsx",
       "lines": {
         "total": 121,
         "code": 108,
@@ -361,7 +361,7 @@
       "technicalDebt": 2.933884297520661
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\components\\settings\\SettingsView.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\components\\settings\\SettingsView.tsx",
       "lines": {
         "total": 173,
         "code": 161,
@@ -376,7 +376,7 @@
       "technicalDebt": 4.421965317919075
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\components\\search\\SearchView.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\components\\search\\SearchView.tsx",
       "lines": {
         "total": 128,
         "code": 114,
@@ -391,7 +391,7 @@
       "technicalDebt": 5.046875
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\components\\layout\\StatusBar.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\components\\layout\\StatusBar.tsx",
       "lines": {
         "total": 132,
         "code": 119,
@@ -406,7 +406,7 @@
       "technicalDebt": 4.863636363636363
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\components\\layout\\Sidebar.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\components\\layout\\Sidebar.tsx",
       "lines": {
         "total": 1902,
         "code": 1747,
@@ -421,7 +421,7 @@
       "technicalDebt": 75.05362776025237
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\components\\layout\\Navigation.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\components\\layout\\Navigation.tsx",
       "lines": {
         "total": 318,
         "code": 288,
@@ -436,7 +436,7 @@
       "technicalDebt": 4.685534591194968
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\components\\graph\\GraphView.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\components\\graph\\GraphView.tsx",
       "lines": {
         "total": 1305,
         "code": 1112,
@@ -451,7 +451,7 @@
       "technicalDebt": 44.23946360153257
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\components\\editor\\VoiceRecorder.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\components\\editor\\VoiceRecorder.tsx",
       "lines": {
         "total": 733,
         "code": 630,
@@ -466,7 +466,7 @@
       "technicalDebt": 34.20395634379263
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\components\\editor\\MarkdownPreview.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\components\\editor\\MarkdownPreview.tsx",
       "lines": {
         "total": 350,
         "code": 286,
@@ -481,7 +481,7 @@
       "technicalDebt": 14.642857142857142
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\components\\editor\\MarkdownEditor.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\components\\editor\\MarkdownEditor.tsx",
       "lines": {
         "total": 255,
         "code": 228,
@@ -496,7 +496,7 @@
       "technicalDebt": 4.127450980392156
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\components\\command\\CommandPalette.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\components\\command\\CommandPalette.tsx",
       "lines": {
         "total": 290,
         "code": 266,
@@ -511,7 +511,7 @@
       "technicalDebt": 4.655172413793103
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\components\\canvas\\CanvasView.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\components\\canvas\\CanvasView.tsx",
       "lines": {
         "total": 888,
         "code": 775,
@@ -526,7 +526,7 @@
       "technicalDebt": 52.02252252252252
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\components\\auth\\AuthView.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\components\\auth\\AuthView.tsx",
       "lines": {
         "total": 156,
         "code": 139,
@@ -541,7 +541,7 @@
       "technicalDebt": 4.038461538461538
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\components\\auth\\AuthModal.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\components\\auth\\AuthModal.tsx",
       "lines": {
         "total": 198,
         "code": 175,
@@ -556,7 +556,7 @@
       "technicalDebt": 3.9898989898989896
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\components\\ai\\AISummaryModal.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\components\\ai\\AISummaryModal.tsx",
       "lines": {
         "total": 477,
         "code": 439,
@@ -571,7 +571,7 @@
       "technicalDebt": 8.975890985324948
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\components\\ai\\AISettingsSection.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\components\\ai\\AISettingsSection.tsx",
       "lines": {
         "total": 235,
         "code": 214,
@@ -586,7 +586,7 @@
       "technicalDebt": 4.148936170212766
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\components\\ai\\AIPanel.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\components\\ai\\AIPanel.tsx",
       "lines": {
         "total": 743,
         "code": 644,
@@ -601,7 +601,7 @@
       "technicalDebt": 20.144683714670258
     },
     {
-      "path": "C:\\Users\\Avalonchain\\jemanote-pwa\\src\\components\\ai\\AIContextMenu.tsx",
+      "path": "C:\\Users\\Avalonchain\\wings8note-pwa\\src\\components\\ai\\AIContextMenu.tsx",
       "lines": {
         "total": 273,
         "code": 243,

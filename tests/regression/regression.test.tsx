@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Regression Tests - Tests for previously fixed bugs
 
 import { describe, it, expect, vi } from 'vitest';

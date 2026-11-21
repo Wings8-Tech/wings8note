@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Cross-Site Scripting (XSS) Protection Tests
 
 /* eslint-disable prefer-global */

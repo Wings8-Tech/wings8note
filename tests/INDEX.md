@@ -1,6 +1,6 @@
 # Index de la Documentation des Tests
 
-Ce fichier sert de point d'entrée centralisé pour toute la documentation des tests de JemaNote.
+Ce fichier sert de point d'entrée centralisé pour toute la documentation des tests de Wings8Note.
 
 ---
 
@@ -224,6 +224,6 @@ npm run test:all
 ---
 
 <p align="center">
-  <strong>JemaNote Testing Infrastructure</strong><br>
-  Fait avec ❤️ par <a href="https://www.jematechnology.fr/">Jema Technology</a>
+  <strong>Wings8Note Testing Infrastructure</strong><br>
+  Fait avec ❤️ par <a href="https://www.wings8.org/">Wings8 Technology</a>
 </p>

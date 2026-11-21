@@ -1,10 +1,10 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Distributed under the license specified in the root directory of this project.
 
 /**
  * Integration regression tests for the LOCAL Mistral credentials contract.
  *
- * In local mode there is no JemaNote account: the user's Mistral key is
+ * In local mode there is no Wings8Note account: the user's Mistral key is
  * validated against https://api.mistral.ai/v1/models and then stored on the
  * device (localforage store `ai_credentials`, key `mistral`). Chat calls go
  * directly to https://api.mistral.ai/v1/chat/completions.

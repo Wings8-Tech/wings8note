@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Distributed under the license specified in the root directory of this project.
 
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
@@ -20,7 +20,7 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-const LANG_STORAGE_KEY = 'jemaos_lang';
+const LANG_STORAGE_KEY = 'wings8os_lang';
 
 // Langue initiale : choix persisté de l'utilisateur, sinon langue du
 // navigateur/système (en ou fr), sinon anglais. Les PWA suivent donc la

@@ -1,6 +1,6 @@
 # Guide de Contribution - Tests
 
-Ce guide explique comment écrire des tests de qualité pour JemaNote. Suivez ces conventions pour maintenir une base de tests cohérente et maintenable.
+Ce guide explique comment écrire des tests de qualité pour Wings8Note. Suivez ces conventions pour maintenir une base de tests cohérente et maintenable.
 
 ---
 

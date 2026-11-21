@@ -96,12 +96,12 @@ export const mockLocalforage = {
  * Helper to mock notes in localStorage
  */
 export function mockNotesInLocalStorage(notes: unknown[]): void {
-  localStorage.setItem('jemanote-notes', JSON.stringify(notes));
+  localStorage.setItem('wings8note-notes', JSON.stringify(notes));
 }
 
 /**
  * Helper to mock user settings in localStorage
  */
 export function mockSettingsInLocalStorage(settings: Record<string, unknown>): void {
-  localStorage.setItem('jemanote-settings', JSON.stringify(settings));
+  localStorage.setItem('wings8note-settings', JSON.stringify(settings));
 }

@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Tests for AISettingsSection component (local Mistral mode, no props)
 
 import userEvent from '@testing-library/user-event';

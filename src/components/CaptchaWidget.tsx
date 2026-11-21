@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Distributed under the license specified in the root directory of this project.
 
 import { useEffect, useRef } from 'react';
@@ -28,12 +28,12 @@ declare global {
 const SCRIPTS: Record<CaptchaProvider, { url: string; id: string; globalName: 'turnstile' | 'hcaptcha' }> = {
   turnstile: {
     url: 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit',
-    id: 'jemanote-captcha-turnstile',
+    id: 'wings8note-captcha-turnstile',
     globalName: 'turnstile',
   },
   hcaptcha: {
     url: 'https://js.hcaptcha.com/1/api.js?render=explicit',
-    id: 'jemanote-captcha-hcaptcha',
+    id: 'wings8note-captcha-hcaptcha',
     globalName: 'hcaptcha',
   },
 };

@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Distributed under the license specified in the root directory of this project.
 
 import path from 'node:path';
@@ -25,10 +25,10 @@ export default defineConfig({
       },
       includeAssets: ['icon.svg', 'icon-192.png', 'icon-512.png'],
       manifest: {
-        name: 'Jemanote - Prise de Notes Intelligente',
-        short_name: 'Jemanote',
+        name: 'Wings8note - Prise de Notes Intelligente',
+        short_name: 'Wings8note',
         description:
-          'Application de prise de notes professionnelle avec graphe de connaissances et canvas, optimisée pour JemaOS',
+          'Application de prise de notes professionnelle avec graphe de connaissances et canvas, optimisée pour Wings8OS',
         theme_color: '#5a63e9',
         background_color: '#FAFAFA',
         display: 'standalone',

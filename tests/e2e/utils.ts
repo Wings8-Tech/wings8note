@@ -8,7 +8,7 @@ export async function clearLocalStorage(page: Page) {
   await page.evaluate(() => {
     localStorage.clear();
     if (globalThis.indexedDB) {
-      globalThis.indexedDB.deleteDatabase('Jemanote');
+      globalThis.indexedDB.deleteDatabase('Wings8note');
     }
   });
 }

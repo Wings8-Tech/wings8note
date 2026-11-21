@@ -1,4 +1,4 @@
-# JemaNote — AI backend (Supabase)
+# Wings8Note — AI backend (Supabase)
 
 Per-user Mistral connection. Each user connects **their own** Mistral account;
 the API key is validated, then encrypted at rest with **Supabase Vault** and
@@ -23,7 +23,7 @@ Requires the [Supabase CLI](https://supabase.com/docs/guides/cli) and a project
 access token (`SUPABASE_ACCESS_TOKEN`).
 
 ```bash
-cd jemanote
+cd wings8note
 supabase link --project-ref yadtnmgyrmigqbndnmho
 supabase db push                       # applies the migration
 supabase functions deploy mistral-credentials --no-verify-jwt
@@ -34,7 +34,7 @@ Set `ALLOWED_ORIGINS` (optional, comma-separated) as a function secret to lock
 CORS down:
 
 ```bash
-supabase secrets set ALLOWED_ORIGINS="https://jemanote.app,http://localhost:5173"
+supabase secrets set ALLOWED_ORIGINS="https://wings8note.app,http://localhost:5173"
 ```
 
 `SUPABASE_URL`, `SUPABASE_ANON_KEY` and `SUPABASE_SERVICE_ROLE_KEY` are injected

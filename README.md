@@ -1,12 +1,12 @@
 <div align="center">
 
-<img src="public/icon-192.png" width="96" height="96" alt="JemaNote logo" />
+<img src="public/icon-192.png" width="96" height="96" alt="Wings8Note logo" />
 
-# JemaNote
+# Wings8Note
 
 ### Your second brain — Markdown notes, graph view and AI, offline-first
 
-[![Made by Jema Technology](https://img.shields.io/badge/Made%20by-Jema%20Technology-8286ef)](https://www.jematechnology.fr)
+[![Made by Wings8 Technology](https://img.shields.io/badge/Made%20by-Wings8%20Technology-8286ef)](https://www.wings8.org)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](LICENSE)
 [![React](https://img.shields.io/badge/React-18-61dafb?logo=react&logoColor=white)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
@@ -25,13 +25,13 @@
 
 </div>
 
-![JemaNote — notes workspace](screenshots/main.png)
+![Wings8Note — notes workspace](screenshots/main.png)
 
 ---
 
 ## 📝 About
 
-JemaNote is a note-taking **Progressive Web App** built by [Jema Technology](https://www.jematechnology.fr). It delivers a fluid experience with full Markdown support, optional cloud sync, and advanced features like a knowledge graph, canvas view and AI assistance — all working offline.
+Wings8Note is a note-taking **Progressive Web App** built by [Wings8 Technology](https://www.wings8.org). It delivers a fluid experience with full Markdown support, optional cloud sync, and advanced features like a knowledge graph, canvas view and AI assistance — all working offline.
 
 ## ✨ Features
 
@@ -80,23 +80,23 @@ JemaNote is a note-taking **Progressive Web App** built by [Jema Technology](htt
 
 |                           Light                           |                             Dark                              |
 | :-------------------------------------------------------: | :-----------------------------------------------------------: |
-| <img src="screenshots/main.png" alt="JemaNote — light" /> | <img src="screenshots/main-dark.png" alt="JemaNote — dark" /> |
+| <img src="screenshots/main.png" alt="Wings8Note — light" /> | <img src="screenshots/main-dark.png" alt="Wings8Note — dark" /> |
 
 ### Editor & Command palette
 
 | Markdown editor | Command palette (`Ctrl/Cmd + K`) |
 | :---: | :---: |
-| <img src="screenshots/editor.png" alt="JemaNote — Markdown editor with live preview" /> | <img src="screenshots/command-palette.png" alt="JemaNote — command palette" /> |
+| <img src="screenshots/editor.png" alt="Wings8Note — Markdown editor with live preview" /> | <img src="screenshots/command-palette.png" alt="Wings8Note — command palette" /> |
 
 <p align="center">
-  <img src="screenshots/settings.png" width="880" alt="JemaNote settings" />
+  <img src="screenshots/settings.png" width="880" alt="Wings8Note settings" />
 </p>
 
 ### 📱 Mobile
 
 | Dark | Light |
 | :---: | :---: |
-| <img src="screenshots/mobile-dark.png" alt="JemaNote — mobile, dark" width="300" /> | <img src="screenshots/mobile-light.png" alt="JemaNote — mobile, light" width="300" /> |
+| <img src="screenshots/mobile-dark.png" alt="Wings8Note — mobile, dark" width="300" /> | <img src="screenshots/mobile-light.png" alt="Wings8Note — mobile, light" width="300" /> |
 
 ---
 
@@ -110,8 +110,8 @@ JemaNote is a note-taking **Progressive Web App** built by [Jema Technology](htt
 ### Install & run
 
 ```bash
-git clone https://github.com/JemaOS/jemanote.git
-cd jemanote
+git clone https://github.com/Wings8-Tech/wings8note.git
+cd wings8note
 npm install
 npm run dev
 ```
@@ -174,5 +174,5 @@ git push origin feat/my-feature
 Released under the **GNU AGPL-3.0** — see [LICENSE](LICENSE).
 
 <div align="center">
-Made with ❤️ by <a href="https://www.jematechnology.fr">Jema Technology</a>
+Made with ❤️ by <a href="https://www.wings8.org">Wings8 Technology</a>
 </div>

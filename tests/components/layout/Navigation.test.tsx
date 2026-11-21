@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Tests for Navigation component
 
 import userEvent from '@testing-library/user-event';
@@ -37,7 +37,7 @@ describe('Navigation', () => {
   describe('Rendering', () => {
     it('should render navigation with logo', () => {
       render(<Navigation {...defaultProps} />);
-      expect(screen.getByText('Jemanote')).toBeInTheDocument();
+      expect(screen.getByText('Wings8note')).toBeInTheDocument();
     });
 
     it('should render navigation as a landmark', () => {

@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Distributed under the license specified in the root directory of this project.
 
 // ============ INTERNATIONALIZATION ============
@@ -355,7 +355,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     featureBrainstorming: 'Brainstorming and idea generation',
     privacy: 'Privacy:',
     privacyNote:
-      'Your notes are sent directly to Mistral AI (api.mistral.ai) only when using AI features. Your key stays on your device; no JemaNote server sees these exchanges.',
+      'Your notes are sent directly to Mistral AI (api.mistral.ai) only when using AI features. Your key stays on your device; no Wings8Note server sees these exchanges.',
     mistralKeyInvalidUnavailable:
       'The Mistral API key is invalid or expired. The AI service is temporarily unavailable.',
     cannotReachMistral: 'Unable to reach the Mistral API. Check your internet connection.',
@@ -365,7 +365,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     // AI account connection (per-user Mistral account)
     connectMistralAccount: 'Connect my Mistral account',
     mistralConnectDesc:
-      'Use your own Mistral account — no JemaNote account required. Paste your key once: it stays on this device and Mistral is called directly.',
+      'Use your own Mistral account — no Wings8Note account required. Paste your key once: it stays on this device and Mistral is called directly.',
     mistralApiKeyLabel: 'Mistral key',
     mistralApiKeyPlaceholder: 'Paste your Mistral key',
     mistralApiKeyHelp: 'Your key stays on this device and will never be displayed again.',
@@ -412,7 +412,7 @@ export const translations: Record<Lang, Record<string, string>> = {
 
     // VoiceRecorder
     speechNotSupported:
-      'Speech recognition is not supported. Please use JemaOS, Edge or Safari and allow the microphone.',
+      'Speech recognition is not supported. Please use Wings8OS, Edge or Safari and allow the microphone.',
     speakIntoMic: 'Speak into the microphone...',
     stop: 'Stop',
     transcription: 'Transcription',
@@ -424,29 +424,29 @@ export const translations: Record<Lang, Record<string, string>> = {
     micAccessError: 'Unable to access the microphone. Check the permissions.',
 
     // InstallPrompt
-    installJemanote: 'Install Jemanote',
+    installWings8note: 'Install Wings8note',
     installDesc: 'Install the app for quick access and an optimal experience, even offline.',
     install: 'Install',
     later: 'Later',
 
     // SubscriptionGuard
-    subscriptionRequired: 'This application requires a JemaOS Pro subscription.',
+    subscriptionRequired: 'This application requires a Wings8OS Pro subscription.',
     upgradeToPro: 'Upgrade to Pro',
     reconnect: 'Sign in again',
     reconnecting: 'Reconnecting…',
     reconnectFailed: 'Reconnection failed. Try again in a moment.',
     guardLoading: 'Loading…',
     reconnectingInProgress: 'Reconnecting…',
-    verifyingSession: 'Verifying your JemaOS session. You will be redirected automatically.',
-    loginAccountLabel: 'Jema account',
+    verifyingSession: 'Verifying your Wings8OS session. You will be redirected automatically.',
+    loginAccountLabel: 'Wings8 account',
     loginAccountPlaceholder: 'name@example.com',
     loginPasswordLabel: 'Password',
-    loginSubmit: 'Sign in with Jema',
+    loginSubmit: 'Sign in with Wings8',
     loginSubmitting: 'Signing in…',
     loginErrorCaptcha: 'Anti-robot verification required. Please try again.',
     loginErrorCaptchaTurnstile:
       'Anti-robot verification required. Complete the CAPTCHA and try again.',
-    loginErrorGeneric: 'Sign-in failed. Please check your Jema credentials.',
+    loginErrorGeneric: 'Sign-in failed. Please check your Wings8 credentials.',
   },
 
   fr: {
@@ -792,7 +792,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     featureBrainstorming: "Brainstorming et génération d'idées",
     privacy: 'Confidentialité:',
     privacyNote:
-      "Vos notes sont envoyées directement à Mistral AI (api.mistral.ai) uniquement lors de l'utilisation des fonctionnalités IA. Votre clé reste sur votre appareil ; aucun serveur JemaNote ne voit ces échanges.",
+      "Vos notes sont envoyées directement à Mistral AI (api.mistral.ai) uniquement lors de l'utilisation des fonctionnalités IA. Votre clé reste sur votre appareil ; aucun serveur Wings8Note ne voit ces échanges.",
     mistralKeyInvalidUnavailable:
       'La clé API Mistral est invalide ou expirée. Le service IA est temporairement indisponible.',
     cannotReachMistral: "Impossible de contacter l'API Mistral. Vérifiez votre connexion internet.",
@@ -802,7 +802,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     // AI account connection (per-user Mistral account)
     connectMistralAccount: 'Connecter mon compte Mistral',
     mistralConnectDesc:
-      'Utilisez votre propre compte Mistral — aucun compte JemaNote requis. Collez votre clé une seule fois : elle reste sur cet appareil et la connexion à Mistral se fait directement.',
+      'Utilisez votre propre compte Mistral — aucun compte Wings8Note requis. Collez votre clé une seule fois : elle reste sur cet appareil et la connexion à Mistral se fait directement.',
     mistralApiKeyLabel: 'Clé Mistral',
     mistralApiKeyPlaceholder: 'Collez votre clé Mistral',
     mistralApiKeyHelp: 'Votre clé reste sur cet appareil et ne sera plus jamais affichée.',
@@ -847,7 +847,7 @@ export const translations: Record<Lang, Record<string, string>> = {
 
     // VoiceRecorder
     speechNotSupported:
-      "La reconnaissance vocale n'est pas supportée. Veuillez utiliser JemaOS, Edge ou Safari et autoriser le microphone.",
+      "La reconnaissance vocale n'est pas supportée. Veuillez utiliser Wings8OS, Edge ou Safari et autoriser le microphone.",
     speakIntoMic: 'Parlez dans le micro...',
     stop: 'Arrêter',
     transcription: 'Transcription',
@@ -859,14 +859,14 @@ export const translations: Record<Lang, Record<string, string>> = {
     micAccessError: "Impossible d'accéder au microphone. Vérifiez les permissions.",
 
     // InstallPrompt
-    installJemanote: 'Installer Jemanote',
+    installWings8note: 'Installer Wings8note',
     installDesc:
       "Installez l'application pour un accès rapide et une expérience optimale, même hors ligne.",
     install: 'Installer',
     later: 'Plus tard',
 
     // SubscriptionGuard
-    subscriptionRequired: 'Cette application nécessite un abonnement JemaOS Pro.',
+    subscriptionRequired: 'Cette application nécessite un abonnement Wings8OS Pro.',
     upgradeToPro: 'Passer à Pro',
     reconnect: 'Se reconnecter',
     reconnecting: 'Reconnexion…',
@@ -874,20 +874,20 @@ export const translations: Record<Lang, Record<string, string>> = {
     guardLoading: 'Chargement…',
     reconnectingInProgress: 'Reconnexion en cours…',
     verifyingSession:
-      'Vérification de votre session JemaOS. Vous allez être redirigé automatiquement.',
-    loginAccountLabel: 'Compte Jema',
+      'Vérification de votre session Wings8OS. Vous allez être redirigé automatiquement.',
+    loginAccountLabel: 'Compte Wings8',
     loginAccountPlaceholder: 'nom@exemple.com',
     loginPasswordLabel: 'Mot de passe',
-    loginSubmit: 'Se connecter avec Jema',
+    loginSubmit: 'Se connecter avec Wings8',
     loginSubmitting: 'Connexion…',
     loginErrorCaptcha: 'Vérification anti-robot requise. Réessayez.',
     loginErrorCaptchaTurnstile: 'Vérification anti-robot requise. Validez le CAPTCHA et réessayez.',
-    loginErrorGeneric: 'Connexion impossible. Vérifiez vos identifiants Jema.',
+    loginErrorGeneric: 'Connexion impossible. Vérifiez vos identifiants Wings8.',
   },
 };
 
 // Module-level language used by non-React code (services, hooks outside providers).
-// French by default for JemaOS PWAs; kept in sync by the LanguageProvider.
+// French by default for Wings8OS PWAs; kept in sync by the LanguageProvider.
 let currentLang: Lang = 'fr';
 
 export function setI18nLang(lang: Lang) {

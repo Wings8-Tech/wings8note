@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Distributed under the license specified in the root directory of this project.
 
 /* eslint-disable prefer-global */
@@ -19,7 +19,7 @@ const generateNoteTitle = () => `Offline Test ${generateUniqueId()}`;
 async function clearLocalStorage(page: Page) {
   await page.evaluate(() => {
     localStorage.clear();
-    indexedDB.deleteDatabase('Jemanote');
+    indexedDB.deleteDatabase('Wings8note');
   });
 }
 
@@ -304,7 +304,7 @@ test.describe('Offline Mode', () => {
       // Check IndexedDB
       const hasData = await page.evaluate(async () => {
         return new Promise(resolve => {
-          const request = indexedDB.open('Jemanote');
+          const request = indexedDB.open('Wings8note');
           request.onsuccess = event => {
             const db = (event.target as IDBOpenDBRequest).result;
             resolve(db.objectStoreNames.length > 0);

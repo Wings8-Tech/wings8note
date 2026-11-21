@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Distributed under the license specified in the root directory of this project.
 
 import {
@@ -90,7 +90,7 @@ export default function Navigation({
         </button>
 
         <h1 className="text-base xs:text-lg sm:text-xl md:text-2xl font-bold text-neutral-900 dark:text-neutral-100 flex-1 truncate">
-          Jemanote
+          Wings8note
         </h1>
 
         <button
@@ -139,7 +139,7 @@ export default function Navigation({
         </button>
 
         <h1 className="text-xl laptop:text-2xl laptop-lg:text-3xl font-bold text-neutral-900 dark:text-neutral-100">
-          Jemanote
+          Wings8note
         </h1>
 
         <div className="flex-1 max-w-md laptop:max-w-lg laptop-lg:max-w-xl desktop:max-w-2xl ml-4 laptop:ml-6">

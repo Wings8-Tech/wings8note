@@ -139,9 +139,9 @@ function printBanner() {
       `
 ╔══════════════════════════════════════════════════════════════╗
 ║                                                              ║
-║           🧪 JEMANOTE TEST RUNNER 🧪                         ║
+║           🧪 WINGS8NOTE TEST RUNNER 🧪                         ║
 ║                                                              ║
-║   Infrastructure de tests complète pour JemaNote PWA        ║
+║   Infrastructure de tests complète pour Wings8Note PWA        ║
 ║                                                              ║
 ╚══════════════════════════════════════════════════════════════╝
 `

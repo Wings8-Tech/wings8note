@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Authentication Security Tests
 
 import { test, expect } from '@playwright/test';
@@ -327,7 +327,7 @@ test.describe('Authentication Security', () => {
       'data:text/html,<script>alert(1)</script>', // NOSONAR
     ];
 
-    const allowedDomains = ['jemanote.app', 'app.jemanote.com', 'localhost'];
+    const allowedDomains = ['wings8note.app', 'app.wings8note.com', 'localhost'];
 
     for (const redirect of maliciousRedirects) {
       const isAllowed = allowedDomains.some(

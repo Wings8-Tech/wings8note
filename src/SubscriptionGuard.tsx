@@ -8,8 +8,8 @@ import { getVerifiedSignedEntitlement, storeSignedEntitlementFromServer } from '
 // SubscriptionGuard v3 (2026-09-04)
 // ---------------------------------
 // Fix "perte de licence après 24 h" : le token JWT (cookie
-// jemaos_access_token) expire après 24 h et la version précédente
-// affichait le mur "JemaOS Pro" sur simple échec du check, sans jamais
+// wings8os_access_token) expire après 24 h et la version précédente
+// affichait le mur "Wings8OS Pro" sur simple échec du check, sans jamais
 // tenter de rafraîchir le token. Cette version :
 //   1. distingue "pas d'abonnement" (mur justifié) de "token expiré"
 //      (401/403 -> tentative de refresh) et d'"erreur réseau" (pas de mur) ;
@@ -30,9 +30,9 @@ import { getVerifiedSignedEntitlement, storeSignedEntitlementFromServer } from '
 //      Jamais de rebond visible vers Nephtys. Le mur "Se reconnecter"
 //      n'apparaît que si l'aller-retour a déjà échoué une fois (cas de
 //      bug) — jamais de boucle infinie.
-//   6. v3 — SESSION GÉRÉE PAR L'OS (single owner) : sur JemaOS, l'OS pose
-//      le cookie partagé jemaos_managed=1 en même temps que
-//      jemaos_access_token et est l'UNIQUE rotationneur du refresh token.
+//   6. v3 — SESSION GÉRÉE PAR L'OS (single owner) : sur Wings8OS, l'OS pose
+//      le cookie partagé wings8os_managed=1 en même temps que
+//      wings8os_access_token et est l'UNIQUE rotationneur du refresh token.
 //      La rotation serveur invalide l'ancien refresh token : si les PWA
 //      rotationnaient aussi la même session (refresh token du portail ou
 //      propagé par cookie), elles TUAIENT la session OS (401 "Invalid or
@@ -41,48 +41,48 @@ import { getVerifiedSignedEntitlement, storeSignedEntitlementFromServer } from '
 //      de jetons via l'iframe du portail (autre session), pas de
 //      suppression du cookie posé par l'OS ; sur 401, re-lecture du cookie
 //      après quelques secondes (l'OS peut être en cours de refresh) puis
-//      re-check. Hors JemaOS (navigateur externe), l'ancien comportement
+//      re-check. Hors Wings8OS (navigateur externe), l'ancien comportement
 //      est conservé.
 // Fichier partagé : le garder identique dans toutes les apps PWA.
 
-const API_BASE = 'https://connect-api.jematech.fr';
+const API_BASE = 'https://connect-api.wings8tech.com';
 // NOTE: la clé d'app `x-api-key` a été retirée du client (audit sécurité).
 // L'autorisation repose désormais sur le jeton utilisateur / refresh token.
 
-// true uniquement sur l'hôte SSO (nephtys.jemaos.com) — sert aux branches
+// true uniquement sur l'hôte SSO (nephtys.wings8.org) — sert aux branches
 // spécifiques au portail central plus bas (UI, détection de route /auth).
-const IS_SSO_HOST = window.location.hostname === 'nephtys.jemaos.com';
+const IS_SSO_HOST = window.location.hostname === 'nephtys.wings8.org';
 
 // Page de reconnexion : chaque app utilise SA PROPRE URL (/auth sur son
 // domaine) — l'utilisateur ne quitte jamais l'app pour se reconnecter.
 // Note : sur l'hôte SSO, origin + '/auth' vaut déjà
-// 'https://nephtys.jemaos.com/auth', d'où l'absence de cas particulier.
+// 'https://nephtys.wings8.org/auth', d'où l'absence de cas particulier.
 const AUTH_URL = `${window.location.origin}/auth`;
 
-// Portail d'authentification JemaOS (jema-auth) : c'est là que l'OS stocke
+// Portail d'authentification Wings8OS (wings8-auth) : c'est là que l'OS stocke
 // les jetons de session (localStorage) après le login. Le PWA les récupère
-// via iframe cachée + postMessage (jemaos_token_request/response).
-const AUTH_PORTAL_URL = 'https://auth-app.jematech.fr';
+// via iframe cachée + postMessage (wings8os_token_request/response).
+const AUTH_PORTAL_URL = 'https://auth-app.wings8tech.com';
 
 // Route de refresh du backend connect : POST { refresh_token } ->
 // { access_token, refresh_token } (rotation 24 h / 7 j).
 const REFRESH_URL = `${API_BASE}/v1/connect/refreshtoken`;
 
-const GRACE_KEY = 'jemaos_sub_ok_until';
+const GRACE_KEY = 'wings8os_sub_ok_until';
 // Tolérance hors-ligne : après une vérification réussie, l'abonnement est
 // considéré valide sans internet pendant cette durée (renouvelée à chaque
 // check en ligne, donc "OFFLINE_GRACE_DAYS jours depuis le dernier
-// contact"). Stockée par profil utilisateur/appareil : liée au compte Jema
+// contact"). Stockée par profil utilisateur/appareil : liée au compte Wings8
 // connecté sur cet appareil uniquement.
 const OFFLINE_GRACE_DAYS = 7;
 const GRACE_MS = OFFLINE_GRACE_DAYS * 24 * 60 * 60 * 1000;
 
 declare global {
   interface Window {
-    getJemaOSToken?: () => Promise<string | null>;
-    jemaosToken?: string;
-    getJemaOSRefreshToken?: () => Promise<string | null>;
-    jemaosRefreshToken?: string;
+    getWings8OSToken?: () => Promise<string | null>;
+    wings8osToken?: string;
+    getWings8OSRefreshToken?: () => Promise<string | null>;
+    wings8osRefreshToken?: string;
   }
 }
 
@@ -93,24 +93,24 @@ function getTokenFromCookie(): string | null {
   const cookies = document.cookie.split(';');
   for (const cookie of cookies) {
     const [name, value] = cookie.trim().split('=');
-    if (name === 'jemaos_access_token' && value) {
+    if (name === 'wings8os_access_token' && value) {
       return value;
     }
   }
   return null;
 }
 
-// Session gérée par l'OS JemaOS : l'OS pose ce cookie partagé en même
-// temps que jemaos_access_token. Quand il est présent, l'OS est l'unique
+// Session gérée par l'OS Wings8OS : l'OS pose ce cookie partagé en même
+// temps que wings8os_access_token. Quand il est présent, l'OS est l'unique
 // propriétaire du refresh token : les PWA ne doivent JAMAIS rotationner
 // la session elles-mêmes (la rotation serveur invalide l'ancien refresh
 // token, ce qui tuait la session OS quand deux consommateurs la
 // rotationnaient en parallèle), ni récupérer les jetons du portail
-// jema-auth (autre session, dont la rotation tuerait aussi l'OS).
+// wings8-auth (autre session, dont la rotation tuerait aussi l'OS).
 function isOsManagedSession(): boolean {
   return document.cookie.split(';').some(cookie => {
     const [name, value] = cookie.trim().split('=');
-    return name === 'jemaos_managed' && value === '1';
+    return name === 'wings8os_managed' && value === '1';
   });
 }
 
@@ -138,9 +138,9 @@ async function getAccessToken(exclude?: string): Promise<string | null> {
   if (isNonEmptyToken(cookieToken) && cookieToken !== exclude) {
     return cookieToken;
   }
-  if (window.getJemaOSToken) {
+  if (window.getWings8OSToken) {
     try {
-      const t = await window.getJemaOSToken();
+      const t = await window.getWings8OSToken();
       if (isNonEmptyToken(t) && t !== exclude) {
         return t;
       }
@@ -148,18 +148,18 @@ async function getAccessToken(exclude?: string): Promise<string | null> {
       // fall through
     }
   }
-  if (isNonEmptyToken(window.jemaosToken) && window.jemaosToken !== exclude) {
-    return window.jemaosToken;
+  if (isNonEmptyToken(window.wings8osToken) && window.wings8osToken !== exclude) {
+    return window.wings8osToken;
   }
   try {
-    const sessionToken = sessionStorage.getItem('jemaos_access_token');
+    const sessionToken = sessionStorage.getItem('wings8os_access_token');
     if (isNonEmptyToken(sessionToken) && sessionToken !== exclude) {
       return sessionToken;
     }
   } catch {
     /* storage indisponible */
   }
-  // Portail jema-auth (iframe + postMessage) : récupère les jetons de la
+  // Portail wings8-auth (iframe + postMessage) : récupère les jetons de la
   // session OS (access + refresh) quand aucune autre source n'en a.
   // JAMAIS en mode géré : les jetons du portail appartiennent à la session
   // web du login, pas à la session OS — les utiliser (et surtout les
@@ -186,11 +186,11 @@ function clearStaleTokenCookie() {
   const domains: (string | undefined)[] = [
     undefined,
     window.location.hostname,
-    '.jemaos.com',
-    '.jematech.fr',
+    '.wings8.org',
+    '.wings8tech.com',
   ];
   for (const domain of domains) {
-    document.cookie = `jemaos_access_token=; Max-Age=0; path=/${
+    document.cookie = `wings8os_access_token=; Max-Age=0; path=/${
       domain !== undefined ? `; domain=${domain}` : ''
     }`;
   }
@@ -227,7 +227,7 @@ function inGracePeriod(): boolean {
 
 // Un seul aller-retour SSO automatique par session onglet : si on revient
 // du SSO sans token valide, on affiche le mur au lieu de boucler.
-const REAUTH_FLAG = 'jemaos_reauth_attempted';
+const REAUTH_FLAG = 'wings8os_reauth_attempted';
 
 function markReauthAttempted() {
   try {
@@ -269,7 +269,7 @@ function getSafeReturnTo(): string {
   }
 }
 
-// Iframe cachée vers le portail jema-auth, chargée une seule fois à la
+// Iframe cachée vers le portail wings8-auth, chargée une seule fois à la
 // demande. Renvoie null si le portail est injoignable (hors ligne...).
 let portalIframePromise: Promise<HTMLIFrameElement | null> | null = null;
 
@@ -302,8 +302,8 @@ function loadPortalIframe(): Promise<HTMLIFrameElement | null> {
   return portalIframePromise;
 }
 
-// Demande les jetons au portail jema-auth via postMessage
-// (jemaos_token_request -> jemaos_token_response { token, refreshToken }).
+// Demande les jetons au portail wings8-auth via postMessage
+// (wings8os_token_request -> wings8os_token_response { token, refreshToken }).
 // Seules les réponses venant de l'origine du portail sont acceptées.
 // Timeout 2.5 s après chargement de l'iframe.
 async function requestTokensFromPortal(): Promise<{
@@ -337,7 +337,7 @@ async function requestTokensFromPortal(): Promise<{
         if (
           typeof data === 'object' &&
           data !== null &&
-          (data as { type?: unknown }).type === 'jemaos_token_response'
+          (data as { type?: unknown }).type === 'wings8os_token_response'
         ) {
           const payload = data as { token?: unknown; refreshToken?: unknown };
           cleanup();
@@ -353,7 +353,7 @@ async function requestTokensFromPortal(): Promise<{
       };
       window.addEventListener('message', onMessage);
       try {
-        frameWindow.postMessage({ type: 'jemaos_token_request' }, AUTH_PORTAL_URL);
+        frameWindow.postMessage({ type: 'wings8os_token_request' }, AUTH_PORTAL_URL);
       } catch {
         // ignore
       }
@@ -364,24 +364,24 @@ async function requestTokensFromPortal(): Promise<{
 }
 
 // Stocke les jetons reçus du portail dans les stores du PWA (le cookie
-// partagé .jemaos.com permet aux autres PWA d'en profiter directement).
+// partagé .wings8.org permet aux autres PWA d'en profiter directement).
 function storePortalTokens(accessToken: string | null, refreshToken: string | null) {
   if (isNonEmptyToken(accessToken)) {
     try {
-      sessionStorage.setItem('jemaos_access_token', accessToken);
+      sessionStorage.setItem('wings8os_access_token', accessToken);
     } catch {
       /* ignore */
     }
-    document.cookie = `jemaos_access_token=${accessToken}; Domain=.jemaos.com; Path=/; Secure; SameSite=Lax; Max-Age=86400`;
+    document.cookie = `wings8os_access_token=${accessToken}; Domain=.wings8.org; Path=/; Secure; SameSite=Lax; Max-Age=86400`;
   }
   if (isNonEmptyToken(refreshToken)) {
     try {
-      sessionStorage.setItem('jemaos_refresh_token', refreshToken);
-      localStorage.setItem('jemaos_refresh_token', refreshToken);
+      sessionStorage.setItem('wings8os_refresh_token', refreshToken);
+      localStorage.setItem('wings8os_refresh_token', refreshToken);
     } catch {
       /* storage indisponible */
     }
-    document.cookie = `jemaos_refresh_token=${refreshToken}; Domain=.jemaos.com; Path=/; Secure; SameSite=Lax; Max-Age=604800`;
+    document.cookie = `wings8os_refresh_token=${refreshToken}; Domain=.wings8.org; Path=/; Secure; SameSite=Lax; Max-Age=604800`;
   }
 }
 
@@ -437,21 +437,21 @@ async function signedEntitlementFallback(): Promise<VerifyOutcome> {
   return inGracePeriod() ? 'allowed' : 'reauth';
 }
 
-// Cherche le refresh token : pont OEM (getJemaOSRefreshToken), puis cookie
-// partagé .jemaos.com, window.jemaosRefreshToken, session/localStorage.
+// Cherche le refresh token : pont OEM (getWings8OSRefreshToken), puis cookie
+// partagé .wings8.org, window.wings8osRefreshToken, session/localStorage.
 function getRefreshTokenFromStores(): string | null {
   const cookies = document.cookie.split(';');
   for (const cookie of cookies) {
     const [name, value] = cookie.trim().split('=');
-    if (name === 'jemaos_refresh_token' && isNonEmptyToken(value)) {
+    if (name === 'wings8os_refresh_token' && isNonEmptyToken(value)) {
       return value;
     }
   }
-  if (isNonEmptyToken(window.jemaosRefreshToken)) {
-    return window.jemaosRefreshToken;
+  if (isNonEmptyToken(window.wings8osRefreshToken)) {
+    return window.wings8osRefreshToken;
   }
   try {
-    const t = sessionStorage.getItem('jemaos_refresh_token');
+    const t = sessionStorage.getItem('wings8os_refresh_token');
     if (isNonEmptyToken(t)) {
       return t;
     }
@@ -459,7 +459,7 @@ function getRefreshTokenFromStores(): string | null {
     /* storage indisponible */
   }
   try {
-    const t = localStorage.getItem('jemaos_refresh_token');
+    const t = localStorage.getItem('wings8os_refresh_token');
     if (isNonEmptyToken(t)) {
       return t;
     }
@@ -472,9 +472,9 @@ function getRefreshTokenFromStores(): string | null {
 // Tente d'obtenir un token frais auprès du backend : POST
 // /v1/connect/refreshtoken { refresh_token } -> { access_token,
 // refresh_token } (rotation 24 h / 7 j). Les nouveaux jetons sont stockés
-// en sessionStorage ET propagés dans le cookie partagé .jemaos.com pour
+// en sessionStorage ET propagés dans le cookie partagé .wings8.org pour
 // les autres PWA. Renvoie false si aucun refresh token n'est disponible.
-// JAMAIS en mode géré : sur JemaOS, l'OS est l'unique rotationneur de la
+// JAMAIS en mode géré : sur Wings8OS, l'OS est l'unique rotationneur de la
 // session — rotationner ici invaliderait le refresh token que l'OS
 // s'apprête à utiliser (c'est ce qui tuait la session OS).
 async function tryRefreshToken(): Promise<boolean> {
@@ -482,9 +482,9 @@ async function tryRefreshToken(): Promise<boolean> {
     return false;
   }
   let refreshToken: string | null = null;
-  if (window.getJemaOSRefreshToken) {
+  if (window.getWings8OSRefreshToken) {
     try {
-      const t = await window.getJemaOSRefreshToken();
+      const t = await window.getWings8OSRefreshToken();
       if (isNonEmptyToken(t)) {
         refreshToken = t;
       }
@@ -494,7 +494,7 @@ async function tryRefreshToken(): Promise<boolean> {
   }
   refreshToken ??= getRefreshTokenFromStores();
   if (refreshToken === null || refreshToken === '') {
-    // Dernier recours : le portail jema-auth (iframe) fournit les jetons
+    // Dernier recours : le portail wings8-auth (iframe) fournit les jetons
     // issus du login OS, y compris le refresh token.
     const portal = await requestTokensFromPortal();
     if (isNonEmptyToken(portal.refreshToken)) {
@@ -530,20 +530,20 @@ async function tryRefreshToken(): Promise<boolean> {
     if (typeof t !== 'string' || t.length === 0) {
       return false;
     }
-    sessionStorage.setItem('jemaos_access_token', t);
-    // Cookie partagé : les autres PWA JemaOS liront directement le
+    sessionStorage.setItem('wings8os_access_token', t);
+    // Cookie partagé : les autres PWA Wings8OS liront directement le
     // nouvel access token (même session, même appareil).
-    document.cookie = `jemaos_access_token=${t}; Domain=.jemaos.com; Path=/; Secure; SameSite=Lax; Max-Age=86400`;
+    document.cookie = `wings8os_access_token=${t}; Domain=.wings8.org; Path=/; Secure; SameSite=Lax; Max-Age=86400`;
 
     const rt = (payload.refresh_token ?? payload.refreshToken) as string | undefined;
     if (typeof rt === 'string' && rt.length > 0) {
-      sessionStorage.setItem('jemaos_refresh_token', rt);
+      sessionStorage.setItem('wings8os_refresh_token', rt);
       try {
-        localStorage.setItem('jemaos_refresh_token', rt);
+        localStorage.setItem('wings8os_refresh_token', rt);
       } catch {
         /* ignore */
       }
-      document.cookie = `jemaos_refresh_token=${rt}; Domain=.jemaos.com; Path=/; Secure; SameSite=Lax; Max-Age=604800`;
+      document.cookie = `wings8os_refresh_token=${rt}; Domain=.wings8.org; Path=/; Secure; SameSite=Lax; Max-Age=604800`;
     }
     return true;
   } catch {
@@ -655,16 +655,16 @@ async function verifySubscription(): Promise<VerifyOutcome> {
   return signedEntitlementFallback();
 }
 
-function JemaOSLogo() {
+function Wings8OSLogo() {
   return (
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px' }}>
       <img
-        src="/logo-jema-black.png"
-        alt="JEMA"
+        src="/logo-wings8-black.png"
+        alt="WINGS8"
         style={{ height: '38px', width: 'auto', display: 'block' }}
       />
       <img
-        src="/logo-jema-os-hero.png"
+        src="/logo-wings8-os-hero.png"
         alt="OS"
         style={{ height: '38px', width: 'auto', display: 'block' }}
       />
@@ -990,7 +990,7 @@ function UpgradeScreen({
           }}
         >
           <div style={{ marginBottom: '2rem' }}>
-            <JemaOSLogo />
+            <Wings8OSLogo />
           </div>
           <LockIcon />
           <h1
@@ -1023,7 +1023,7 @@ function UpgradeScreen({
             }}
           >
             <a
-              href="https://www.jemaos.com/tarifs"
+              href="https://www.wings8.org/tarifs"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -1062,7 +1062,7 @@ function UpgradeScreen({
             ) : (
               // Dans les PWA : reconnexion INTERNE, jamais de lien vers une
               // autre app. Nouvelle vérification immédiate (cookie, jeton
-              // OEM via getJemaOSToken, refresh backend).
+              // OEM via getWings8OSToken, refresh backend).
               <button
                 type="button"
                 onClick={onReconnect}
@@ -1100,7 +1100,7 @@ function UpgradeScreen({
           color: 'rgba(255, 255, 255, 0.45)',
         }}
       >
-        © Jema Technology 2026
+        © Wings8 Technology 2026
       </div>
     </div>
   );
@@ -1138,7 +1138,7 @@ function ReconnectScreen({ appName }: { appName: string }) {
   const returnTo = getSafeReturnTo();
 
   // Reconnexion interne depuis l'écran d'échec : nouvelle vérification
-  // immédiate (cookie, jeton OEM via getJemaOSToken, refresh backend),
+  // immédiate (cookie, jeton OEM via getWings8OSToken, refresh backend),
   // puis retour à l'app si le jeton est de nouveau valide.
   const handleReconnect = async () => {
     setReconnecting(true);
@@ -1216,7 +1216,7 @@ function ReconnectScreen({ appName }: { appName: string }) {
         }}
       >
         <div style={{ marginBottom: '2rem' }}>
-          <JemaOSLogo />
+          <Wings8OSLogo />
         </div>
         <h1
           style={{
@@ -1265,7 +1265,7 @@ export const SubscriptionGuard: React.FC<SubscriptionGuardProps> = ({ appName, c
   const onAuthPath = !IS_SSO_HOST && window.location.pathname.replace(/\/+$/, '') === '/auth';
 
   // Reconnexion INTERNE depuis le mur : nouvelle vérification immédiate
-  // (cookie, jeton OEM via getJemaOSToken, refresh backend) sans quitter
+  // (cookie, jeton OEM via getWings8OSToken, refresh backend) sans quitter
   // l'app ni afficher de lien vers une autre application.
   const handleReconnect = async () => {
     setReconnecting(true);

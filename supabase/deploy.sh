@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Copyright (c) 2025 Jema Technology.
+# Copyright (c) 2025 Wings8 Technology.
 #
-# Deploy the JemaNote AI backend (per-user Mistral account) to Supabase.
+# Deploy the Wings8Note AI backend (per-user Mistral account) to Supabase.
 #
 # Prerequisites:
 #   - Supabase CLI installed (https://supabase.com/docs/guides/cli)
@@ -43,6 +43,6 @@ echo "→ Deploying auth-guard"
 supabase functions deploy auth-guard --no-verify-jwt
 
 echo "Done. Optionally lock CORS with:"
-echo '  supabase secrets set ALLOWED_ORIGINS="https://jemanote.app,http://localhost:5173"'
+echo '  supabase secrets set ALLOWED_ORIGINS="https://wings8note.app,http://localhost:5173"'
 echo 'To enable the anti-robot CAPTCHA (free, Cloudflare Turnstile):'
-echo '  supabase secrets set CAPTCHA_ENABLED="true" CAPTCHA_SECRET_KEY="<turnstile-secret>" CAPTCHA_ALLOWED_HOSTNAMES="jemanote.app"'
+echo '  supabase secrets set CAPTCHA_ENABLED="true" CAPTCHA_SECRET_KEY="<turnstile-secret>" CAPTCHA_ALLOWED_HOSTNAMES="wings8note.app"'

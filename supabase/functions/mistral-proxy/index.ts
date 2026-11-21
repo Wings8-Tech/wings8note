@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Edge Function: mistral-proxy
 //
 // Forwards chat requests to Mistral using the *connected user's own* API key.

@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Content Security Policy validation script
 
 import fs from 'node:fs';
 import path from 'node:path';
 
 /**
- * Default CSP directives for Jemanote
+ * Default CSP directives for Wings8note
  */
 const DEFAULT_CSP = {
   'default-src': ["'self'"],

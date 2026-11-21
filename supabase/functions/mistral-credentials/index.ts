@@ -1,7 +1,7 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Edge Function: mistral-credentials
 //
-// Manages the *per-user* Mistral account connection for JemaNote.
+// Manages the *per-user* Mistral account connection for Wings8Note.
 //
 //   POST /mistral-credentials/status     -> { connected, model, key_last4 }
 //   POST /mistral-credentials/connect    -> body { api_key, model? } -> status

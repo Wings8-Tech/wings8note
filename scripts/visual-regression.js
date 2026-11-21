@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Distributed under the license specified in the root directory of this project.
 
 /**
@@ -315,7 +315,7 @@ const generateReport = results => {
   </div>
   
   <div class="footer">
-    <p>Jemanote Visual Regression Testing</p>
+    <p>Wings8note Visual Regression Testing</p>
   </div>
 </body>
 </html>`;

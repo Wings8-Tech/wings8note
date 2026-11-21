@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // HTTP Security Headers Tests
 
 import { test, expect, Response } from '@playwright/test';

@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Distributed under the license specified in the root directory of this project.
 
 import React, { useState, useEffect, Suspense } from 'react';
@@ -284,7 +284,7 @@ function App() {
   };
 
   return (
-    <SubscriptionGuard appName="JemaNote">
+    <SubscriptionGuard appName="Wings8Note">
     <div className="flex h-screen flex-col bg-neutral-50 dark:bg-neutral-900 overflow-hidden">
       <Navigation
         currentView={currentView}

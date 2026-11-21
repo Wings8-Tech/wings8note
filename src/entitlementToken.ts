@@ -12,12 +12,12 @@
 // `/v1/connect/os/entitlement-jwks` et mise en cache, ce qui permet de faire
 // tourner la clé de signature côté serveur sans redéployer les apps.
 
-const API_BASE = 'https://connect-api.jematech.fr';
+const API_BASE = 'https://connect-api.wings8tech.com';
 const ENTITLEMENT_URL = `${API_BASE}/v1/connect/os/entitlement`;
 const JWKS_URL = `${API_BASE}/v1/connect/os/entitlement-jwks`;
 
-const TOKEN_KEY = 'jemaos_entitlement_jwt';
-const JWKS_KEY = 'jemaos_entitlement_jwks';
+const TOKEN_KEY = 'wings8os_entitlement_jwt';
+const JWKS_KEY = 'wings8os_entitlement_jwks';
 const JWKS_CACHE_MS = 24 * 60 * 60 * 1000; // 24 h
 
 export interface EntitlementClaims {

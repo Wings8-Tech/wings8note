@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Edge Function: create-admin-user (hardened)
 //
 // Creates a user via the Supabase Admin API. Privileged operation: it may only

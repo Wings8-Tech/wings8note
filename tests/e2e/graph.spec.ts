@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Distributed under the license specified in the root directory of this project.
 
 /**
@@ -17,7 +17,7 @@ const generateNoteTitle = () => `Graph Test ${generateUniqueId()}`;
 async function clearLocalStorage(page: Page) {
   await page.evaluate(() => {
     localStorage.clear();
-    indexedDB.deleteDatabase('Jemanote');
+    indexedDB.deleteDatabase('Wings8note');
   });
 }
 

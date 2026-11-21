@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jemanote-pwa.vercel.app/sitemap.xml
+Sitemap: https://wings8note-pwa.vercel.app/sitemap.xml

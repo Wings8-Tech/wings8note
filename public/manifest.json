@@ -1,6 +1,6 @@
 {
-  "name": "Jemanote - Prise de Notes Intelligente",
-  "short_name": "Jemanote",
+  "name": "Wings8note - Prise de Notes Intelligente",
+  "short_name": "Wings8note",
   "description": "Application de prise de notes intelligente avec graphe de connaissances et canvas",
   "start_url": "/",
   "display": "standalone",

@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Tests for StatusBar component
 
 import userEvent from '@testing-library/user-event';
@@ -129,13 +129,13 @@ describe('StatusBar', () => {
   describe('Footer Info', () => {
     it('should show developer credit', () => {
       render(<StatusBar {...defaultProps} />);
-      expect(screen.getByText('Jema Technology')).toBeInTheDocument();
+      expect(screen.getByText('Wings8 Technology')).toBeInTheDocument();
     });
 
     it('should have link to developer website', () => {
       render(<StatusBar {...defaultProps} />);
-      const link = screen.getByText('Jema Technology');
-      expect(link.closest('a')).toHaveAttribute('href', 'https://www.jematechnology.fr/');
+      const link = screen.getByText('Wings8 Technology');
+      expect(link.closest('a')).toHaveAttribute('href', 'https://www.wings8.org/');
     });
 
     it('should show edit mode indicator', () => {

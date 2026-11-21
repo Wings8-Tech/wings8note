@@ -2,7 +2,7 @@
 
 ## Overview
 
-This directory contains comprehensive security tests for the Jemanote application. These tests are designed to identify and prevent common security vulnerabilities in a React/TypeScript/Vite PWA application.
+This directory contains comprehensive security tests for the Wings8note application. These tests are designed to identify and prevent common security vulnerabilities in a React/TypeScript/Vite PWA application.
 
 ## Test Categories
 
@@ -351,7 +351,7 @@ node scripts/csp-check.js --generate
 If you discover a security vulnerability:
 
 1. **DO NOT** create a public issue
-2. Email security@jemanote.app with details
+2. Email security@wings8note.app with details
 3. Include steps to reproduce
 4. Allow time for remediation before disclosure
 

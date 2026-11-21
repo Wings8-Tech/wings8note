@@ -1,11 +1,11 @@
-# Documentation des Tests - JemaNote
+# Documentation des Tests - Wings8Note
 
 <p align="center">
-  <img src="../public/icon-192.png" alt="JemaNote Logo" width="80" height="80">
+  <img src="../public/icon-192.png" alt="Wings8Note Logo" width="80" height="80">
 </p>
 
 <p align="center">
-  <strong>Infrastructure de tests complète pour JemaNote PWA</strong>
+  <strong>Infrastructure de tests complète pour Wings8Note PWA</strong>
 </p>
 
 <p align="center">
@@ -20,7 +20,7 @@
 
 ## 📋 Vue d'ensemble
 
-Cette documentation décrit l'infrastructure de tests complète de **JemaNote**, une application React/TypeScript/Vite PWA. Notre stratégie de tests suit la **pyramide des tests** avec une couverture complète à tous les niveaux.
+Cette documentation décrit l'infrastructure de tests complète de **Wings8Note**, une application React/TypeScript/Vite PWA. Notre stratégie de tests suit la **pyramide des tests** avec une couverture complète à tous les niveaux.
 
 ### 🎯 Objectifs
 
@@ -197,8 +197,8 @@ Tests de qualité du code et de métriques.
 
 ```bash
 # Cloner le dépôt
-git clone https://github.com/jematechnology/jemanote-pwa.git
-cd jemanote-pwa
+git clone https://github.com/wings8technology/wings8note-pwa.git
+cd wings8note-pwa
 
 # Installer les dépendances
 npm install
@@ -552,5 +552,5 @@ Si vous rencontrez des problèmes avec les tests :
 ---
 
 <p align="center">
-  Fait avec ❤️ par <a href="https://www.jematechnology.fr/">Jema Technology</a>
+  Fait avec ❤️ par <a href="https://www.wings8.org/">Wings8 Technology</a>
 </p>

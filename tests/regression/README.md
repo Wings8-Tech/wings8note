@@ -1,6 +1,6 @@
 # Tests de Régression Visuelle
 
-Ce dossier contient les tests de régression visuelle pour l'application Jemanote.
+Ce dossier contient les tests de régression visuelle pour l'application Wings8note.
 
 ## Table des matières
 

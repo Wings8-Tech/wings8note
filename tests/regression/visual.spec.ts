@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Distributed under the license specified in the root directory of this project.
 
 /**
@@ -289,7 +289,7 @@ test.describe('Visual Regression Tests - States', () => {
     // Activer le mode sombre
     await page.evaluate(() => {
       document.documentElement.classList.add('dark');
-      localStorage.setItem('jemanote-theme', 'dark');
+      localStorage.setItem('wings8note-theme', 'dark');
     });
     await page.reload();
     await hideNonDeterministicElements(page);

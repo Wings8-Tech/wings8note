@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Edge Function: auth-guard
 //
 // Proxy d'authentification (email + mot de passe) avec protection anti-robot :

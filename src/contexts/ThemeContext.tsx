@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Distributed under the license specified in the root directory of this project.
 
 import React, {
@@ -22,7 +22,7 @@ interface ThemeContextType {
   setTheme: (mode: ThemeMode) => void;
 }
 
-const STORAGE_KEY = 'jemanote-theme';
+const STORAGE_KEY = 'wings8note-theme';
 const DARK_QUERY = '(prefers-color-scheme: dark)';
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);

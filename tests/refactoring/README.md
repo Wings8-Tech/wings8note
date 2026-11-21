@@ -1,6 +1,6 @@
 # Tests de Factorisation et Analyse de Code
 
-Ce dossier contient les tests et outils d'analyse de la qualité du code pour l'application Jemanote PWA.
+Ce dossier contient les tests et outils d'analyse de la qualité du code pour l'application Wings8note PWA.
 
 ## 📊 Métriques de Code
 
@@ -151,8 +151,8 @@ npm run analyze:metrics
 Configuration dans [`sonar-project.properties`](../../sonar-project.properties) :
 
 ```properties
-sonar.projectKey=jemanote-pwa
-sonar.projectName=Jemanote PWA
+sonar.projectKey=wings8note-pwa
+sonar.projectName=Wings8note PWA
 sonar.sources=src
 sonar.tests=tests
 sonar.typescript.lcov.reportPaths=coverage/lcov.info

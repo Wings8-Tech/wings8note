@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Distributed under the license specified in the root directory of this project.
 
 import localforage from 'localforage';
@@ -7,7 +7,7 @@ import { Note, Folder, Tag, Link, Attachment } from '@/types';
 
 // Configure localforage for better performance
 localforage.config({
-  name: 'Jemanote',
+  name: 'Wings8note',
   version: 1,
   storeName: 'notes_store',
   description: 'Local storage for Obsidian PWA notes',

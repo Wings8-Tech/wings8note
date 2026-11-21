@@ -367,7 +367,7 @@ function generateHTMLReport(graph, cycles, metrics, layers, violations) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dependency Analysis Report - Jemanote PWA</title>
+  <title>Dependency Analysis Report - Wings8note PWA</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {

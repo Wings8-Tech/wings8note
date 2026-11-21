@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Copyright (c) 2025 Jema Technology.
+<!-- Copyright (c) 2025 Wings8 Technology.
      Distributed under the license specified in the root directory of this project. -->
 <html lang="fr">
   <head>
@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Jemanote - Application de prise de notes intelligente avec graphe de connaissances et canvas, optimisée pour JemaOS"
+      content="Wings8note - Application de prise de notes intelligente avec graphe de connaissances et canvas, optimisée pour Wings8OS"
     />
     <meta name="theme-color" content="#6f75ec" />
 
-    <title>Jemanote - Prise de Notes Intelligente</title>
+    <title>Wings8note - Prise de Notes Intelligente</title>
 
     <link rel="icon" type="image/svg+xml" href="/icon.svg" />
     <link rel="apple-touch-icon" href="/icon-192.png" />
@@ -64,7 +64,7 @@
     <script>
       (function() {
         try {
-          var mode = localStorage.getItem('jemanote-theme');
+          var mode = localStorage.getItem('wings8note-theme');
           var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
           var dark = mode === 'dark' || ((!mode || mode === 'system') && prefersDark);
           if (dark) {

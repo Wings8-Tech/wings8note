@@ -1,11 +1,11 @@
 // Session web « Connect » — SOURCE D'AUTH INDÉPENDANTE DE L'INJECTION OS.
 //
-// Le login web (email + mot de passe Jema) crée une session dans
-// `jema.user_sessions` côté connect-api (voir createPortalSession), donc
+// Le login web (email + mot de passe Wings8) crée une session dans
+// `wings8.user_sessions` côté connect-api (voir createPortalSession), donc
 // EXACTEMENT le token attendu par le SubscriptionGuard pour /os/subscription et
 // /os/entitlement. Même si le cookie/token de l'OS n'est jamais posé (profil
 // sans jeton, refresh révoqué…), l'utilisateur peut se connecter ici et le
-// guard fonctionne — sans dépendre de JemaOS.
+// guard fonctionne — sans dépendre de Wings8OS.
 //
 // Le mot de passe part en HTTPS vers connect-api (comme n'importe quel login) ;
 // il n'est ni stocké ni loggé côté client.
@@ -14,7 +14,7 @@
 // (Cloudflare Turnstile). Le token est fourni par le widget de SubscriptionGuard
 // et transmis ici sous `captcha_token`.
 
-const API_BASE = 'https://connect-api.jematech.fr';
+const API_BASE = 'https://connect-api.wings8tech.com';
 const CONNECT_LOGIN_URL = `${API_BASE}/v1/connect/login`;
 
 export interface ConnectLoginResult {
@@ -77,23 +77,23 @@ export async function connectWebLogin(
 }
 
 // Persiste la session dans les MÊMES stores que ceux lus par le guard
-// (sessionStorage/localStorage `jemaos_access_token` + cookie partagé
-// `.jemaos.com`), pour que getAccessToken()/getRefreshTokenFromStores() la
+// (sessionStorage/localStorage `wings8os_access_token` + cookie partagé
+// `.wings8.org`), pour que getAccessToken()/getRefreshTokenFromStores() la
 // retrouvent immédiatement au prochain check.
 export function persistConnectSession(accessToken: string, refreshToken: string | null): void {
   try {
-    sessionStorage.setItem('jemaos_access_token', accessToken);
+    sessionStorage.setItem('wings8os_access_token', accessToken);
   } catch {
     /* storage indisponible */
   }
-  document.cookie = `jemaos_access_token=${accessToken}; Domain=.jemaos.com; Path=/; Secure; SameSite=Lax; Max-Age=86400`;
+  document.cookie = `wings8os_access_token=${accessToken}; Domain=.wings8.org; Path=/; Secure; SameSite=Lax; Max-Age=86400`;
   if (refreshToken !== null && refreshToken.length > 0) {
     try {
-      sessionStorage.setItem('jemaos_refresh_token', refreshToken);
-      localStorage.setItem('jemaos_refresh_token', refreshToken);
+      sessionStorage.setItem('wings8os_refresh_token', refreshToken);
+      localStorage.setItem('wings8os_refresh_token', refreshToken);
     } catch {
       /* storage indisponible */
     }
-    document.cookie = `jemaos_refresh_token=${refreshToken}; Domain=.jemaos.com; Path=/; Secure; SameSite=Lax; Max-Age=604800`;
+    document.cookie = `wings8os_refresh_token=${refreshToken}; Domain=.wings8.org; Path=/; Secure; SameSite=Lax; Max-Age=604800`;
   }
 }

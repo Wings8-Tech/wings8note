@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Distributed under the license specified in the root directory of this project.
 
 /**
@@ -312,7 +312,7 @@ async function main() {
       `
 ╔══════════════════════════════════════════════════════════╗
 ║                                                          ║
-║           JEMANOTE QUALITY CHECK SUITE                   ║
+║           WINGS8NOTE QUALITY CHECK SUITE                   ║
 ║                                                          ║
 ╚══════════════════════════════════════════════════════════╝
   ` +

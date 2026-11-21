@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Security Tests
 
 import { describe, it, expect, beforeEach } from 'vitest';
@@ -134,14 +134,14 @@ describe('Security Tests', () => {
 
   describe('CSRF Protection', () => {
     it('should validate request origins', () => {
-      const allowedOrigins = ['https://jemanote.app', 'https://app.jemanote.com'];
-      const requestOrigin = 'https://jemanote.app';
+      const allowedOrigins = ['https://wings8note.app', 'https://app.wings8note.com'];
+      const requestOrigin = 'https://wings8note.app';
 
       expect(allowedOrigins.includes(requestOrigin)).toBe(true);
     });
 
     it('should reject requests from unknown origins', () => {
-      const allowedOrigins = ['https://jemanote.app'];
+      const allowedOrigins = ['https://wings8note.app'];
       const maliciousOrigin = 'https://evil-site.com';
 
       expect(allowedOrigins.includes(maliciousOrigin)).toBe(false);
@@ -233,7 +233,7 @@ describe('Security Tests', () => {
 
   describe('API Security', () => {
     it('should use HTTPS for API calls', () => {
-      const apiUrl = 'https://api.jemanote.com';
+      const apiUrl = 'https://api.wings8note.com';
       expect(apiUrl.startsWith('https://')).toBe(true);
     });
 

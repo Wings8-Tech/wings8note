@@ -1,6 +1,6 @@
 # Guide CI/CD - Tests
 
-Ce document décrit l'intégration des tests dans la pipeline CI/CD de JemaNote.
+Ce document décrit l'intégration des tests dans la pipeline CI/CD de Wings8Note.
 
 ---
 

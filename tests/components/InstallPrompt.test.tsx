@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Tests for InstallPrompt component
 
 /* eslint-disable prefer-global */
@@ -55,12 +55,12 @@ describe('InstallPrompt', () => {
       });
 
       render(<InstallPrompt />);
-      expect(screen.queryByText('Installer Jemanote')).not.toBeInTheDocument();
+      expect(screen.queryByText('Installer Wings8note')).not.toBeInTheDocument();
     });
 
     it('should not render before beforeinstallprompt event', () => {
       render(<InstallPrompt />);
-      expect(screen.queryByText('Installer Jemanote')).not.toBeInTheDocument();
+      expect(screen.queryByText('Installer Wings8note')).not.toBeInTheDocument();
     });
 
     it('should not render if user declined recently', () => {
@@ -69,7 +69,7 @@ describe('InstallPrompt', () => {
       localStorage.setItem('pwa-install-declined', recentDate.toISOString());
 
       render(<InstallPrompt />);
-      expect(screen.queryByText('Installer Jemanote')).not.toBeInTheDocument();
+      expect(screen.queryByText('Installer Wings8note')).not.toBeInTheDocument();
     });
 
     it('should render if user declined more than 7 days ago', async () => {
@@ -95,7 +95,7 @@ describe('InstallPrompt', () => {
 
       await waitFor(
         () => {
-          expect(screen.queryByText('Installer Jemanote')).toBeInTheDocument();
+          expect(screen.queryByText('Installer Wings8note')).toBeInTheDocument();
         },
         { timeout: 5000 }
       );
@@ -122,7 +122,7 @@ describe('InstallPrompt', () => {
       vi.advanceTimersByTime(31000);
 
       await waitFor(() => {
-        expect(screen.getByText('Installer Jemanote')).toBeInTheDocument();
+        expect(screen.getByText('Installer Wings8note')).toBeInTheDocument();
       });
 
       vi.useRealTimers();
@@ -145,7 +145,7 @@ describe('InstallPrompt', () => {
       vi.advanceTimersByTime(31000);
 
       await waitFor(() => {
-        expect(screen.getByText('Installer Jemanote')).toBeInTheDocument();
+        expect(screen.getByText('Installer Wings8note')).toBeInTheDocument();
       });
 
       vi.useRealTimers();
@@ -264,7 +264,7 @@ describe('InstallPrompt', () => {
       const user = userEvent.setup();
       await user.click(screen.getByText('Plus tard'));
 
-      expect(screen.queryByText('Installer Jemanote')).not.toBeInTheDocument();
+      expect(screen.queryByText('Installer Wings8note')).not.toBeInTheDocument();
       vi.useRealTimers();
     });
 
@@ -318,7 +318,7 @@ describe('InstallPrompt', () => {
       const user = userEvent.setup();
       await user.click(screen.getByLabelText('Fermer'));
 
-      expect(screen.queryByText('Installer Jemanote')).not.toBeInTheDocument();
+      expect(screen.queryByText('Installer Wings8note')).not.toBeInTheDocument();
       vi.useRealTimers();
     });
   });
@@ -352,7 +352,7 @@ describe('InstallPrompt', () => {
       vi.advanceTimersByTime(31000);
 
       await waitFor(() => {
-        expect(screen.getByText('Installer Jemanote')).toBeInTheDocument();
+        expect(screen.getByText('Installer Wings8note')).toBeInTheDocument();
       });
 
       // Simulate app installed
@@ -360,7 +360,7 @@ describe('InstallPrompt', () => {
         appInstalledHandler();
       }
 
-      expect(screen.queryByText('Installer Jemanote')).not.toBeInTheDocument();
+      expect(screen.queryByText('Installer Wings8note')).not.toBeInTheDocument();
       vi.useRealTimers();
     });
   });
@@ -383,7 +383,7 @@ describe('InstallPrompt', () => {
       vi.advanceTimersByTime(31000);
 
       await waitFor(() => {
-        const prompt = screen.getByText('Installer Jemanote').closest('div[class*="fixed"]');
+        const prompt = screen.getByText('Installer Wings8note').closest('div[class*="fixed"]');
         expect(prompt).toHaveClass('fixed', 'bottom-4', 'right-4');
       });
 
@@ -407,7 +407,7 @@ describe('InstallPrompt', () => {
       vi.advanceTimersByTime(31000);
 
       await waitFor(() => {
-        const prompt = screen.getByText('Installer Jemanote').closest('div[class*="animate"]');
+        const prompt = screen.getByText('Installer Wings8note').closest('div[class*="animate"]');
         expect(prompt).toHaveClass('animate-slide-up');
       });
 

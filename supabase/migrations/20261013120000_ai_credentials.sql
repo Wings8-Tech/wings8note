@@ -1,4 +1,4 @@
--- Copyright (c) 2025 Jema Technology.
+-- Copyright (c) 2025 Wings8 Technology.
 -- Per-user AI credentials (Mistral).
 --
 -- The user's own Mistral API key is stored encrypted at rest using Supabase
@@ -111,7 +111,7 @@ begin
     v_new_secret := vault.create_secret(
       v_key,
       'mistral_key_' || p_user_id::text || '_' || gen_random_uuid()::text,
-      'JemaNote Mistral API key'
+      'Wings8Note Mistral API key'
     );
 
     insert into public.ai_credentials (user_id, vault_secret_id, key_last4, model)

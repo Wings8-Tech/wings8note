@@ -1,4 +1,4 @@
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Distributed under the license specified in the root directory of this project.
 
 import { Cloud, HardDrive, RefreshCw, Clock } from 'lucide-react';
@@ -101,23 +101,23 @@ export default function StatusBar({
         <span className="hidden lg:inline text-[10px] xs:text-xs text-neutral-700 dark:text-neutral-300">
           {t('developedBy')}{' '}
           <a
-            href="https://www.jematechnology.fr/"
+            href="https://www.wings8.org/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 hover:underline"
           >
-            Jema Technology
+            Wings8 Technology
           </a>{' '}
           {t('footerLicense')}
         </span>
         <span className="hidden sm:inline lg:hidden text-[10px] xs:text-xs text-neutral-700 dark:text-neutral-300">
           <a
-            href="https://www.jematechnology.fr/"
+            href="https://www.wings8.org/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 hover:underline"
           >
-            Jema Technology
+            Wings8 Technology
           </a>{' '}
           © 2025
         </span>

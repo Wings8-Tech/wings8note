@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Copyright (c) 2025 Jema Technology.
+// Copyright (c) 2025 Wings8 Technology.
 // Security audit script for dependency vulnerability scanning
 
 import { execSync } from 'node:child_process';
@@ -227,7 +227,7 @@ async function main() {
   const failOnCritical = args.has('--fail-on-critical');
   const failOnHigh = args.has('--fail-on-high');
 
-  console.log('🛡️  Jemanote Security Audit Tool\n');
+  console.log('🛡️  Wings8note Security Audit Tool\n');
 
   // Run audit
   const auditData = runNpmAudit();

@@ -1,6 +1,6 @@
 # Guide de Débogage des Tests
 
-Ce guide vous aide à diagnostiquer et résoudre les problèmes avec les tests dans JemaNote.
+Ce guide vous aide à diagnostiquer et résoudre les problèmes avec les tests dans Wings8Note.
 
 ---
 

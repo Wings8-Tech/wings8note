@@ -1,6 +1,6 @@
 # Tests de Performance
 
-Ce dossier contient tous les tests de performance pour l'application Jemanote PWA.
+Ce dossier contient tous les tests de performance pour l'application Wings8note PWA.
 
 ## Table des matières
 
