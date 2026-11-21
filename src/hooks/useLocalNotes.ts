@@ -69,7 +69,11 @@ async function handleNoteRealtimeEvent(
 ) {
   if (payload.eventType === 'INSERT') {
     const newNote = payload.new as Note;
-    setNotes(prev => [newNote, ...prev]);
+    setNotes(prev =>
+      prev.some(note => note.id === newNote.id)
+        ? prev.map(note => (note.id === newNote.id ? newNote : note))
+        : [newNote, ...prev]
+    );
     await LocalStorage.saveNote(newNote);
   } else if (payload.eventType === 'UPDATE') {
     const updatedNote = payload.new as Note;
@@ -88,7 +92,11 @@ async function handleFolderRealtimeEvent(
 ) {
   if (payload.eventType === 'INSERT') {
     const newFolder = payload.new as Folder;
-    setFolders(prev => [newFolder, ...prev]);
+    setFolders(prev =>
+      prev.some(folder => folder.id === newFolder.id)
+        ? prev.map(folder => (folder.id === newFolder.id ? newFolder : folder))
+        : [newFolder, ...prev]
+    );
     await LocalStorage.saveFolder(newFolder);
   } else if (payload.eventType === 'UPDATE') {
     const updatedFolder = payload.new as Folder;
