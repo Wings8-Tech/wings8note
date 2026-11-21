@@ -1248,7 +1248,7 @@ interface SubscriptionGuardProps {
   children: React.ReactNode;
 }
 
-export const SubscriptionGuard: React.FC<SubscriptionGuardProps> = ({ appName, children }) => {
+const SubscriptionGuardInner: React.FC<SubscriptionGuardProps> = ({ appName, children }) => {
   // Démarrage instantané quand une vérification a réussi récemment (grâce de
   // 7 jours) : l'app s'affiche immédiatement et la vérification en ligne se
   // fait en arrière-plan (stale-while-revalidate). Une révocation serveur
@@ -1343,6 +1343,14 @@ export const SubscriptionGuard: React.FC<SubscriptionGuardProps> = ({ appName, c
     );
   }
   return <>{children}</>;
+};
+
+export const SubscriptionGuard: React.FC<SubscriptionGuardProps> = ({ appName, children }) => {
+  const enabled = import.meta.env.VITE_SUBSCRIPTION_GUARD_ENABLED !== 'false';
+  if (!enabled) {
+    return <>{children}</>;
+  }
+  return <SubscriptionGuardInner appName={appName}>{children}</SubscriptionGuardInner>;
 };
 
 export default SubscriptionGuard;

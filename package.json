@@ -24,13 +24,16 @@
     "typescript"
   ],
   "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "rm -f tsconfig.tsbuildinfo tsconfig.app.tsbuildinfo tsconfig.node.tsbuildinfo && tsc -b && vite build",
+    "build": "node -e \"for (const f of ['tsconfig.tsbuildinfo','tsconfig.app.tsbuildinfo','tsconfig.node.tsbuildinfo']) { try { require('fs').rmSync(f) } catch {} }\" && tsc -b && vite build",
     "build:prod": "tsc -b && BUILD_MODE=prod vite build",
     "preview": "vite preview",
     "install-deps": "npm install",
-    "clean": "rm -rf node_modules package-lock.json",
+    "clean": "node -e \"require('fs').rmSync('node_modules',{recursive:true,force:true}); try { require('fs').rmSync('package-lock.json') } catch {}\"",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
@@ -180,7 +183,6 @@
     "@vitest/coverage-v8": "^1.0.0",
     "@vitest/ui": "^4.0.18",
     "autoprefixer": "10.4.20",
-    "bundlesize": "^0.18.1",
     "chromatic": "^10.0.0",
     "chrome-launcher": "^1.1.0",
     "depcheck": "^1.4.7",
