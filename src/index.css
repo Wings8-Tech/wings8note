@@ -100,6 +100,7 @@ dialog::backdrop {
 }
 
 /* Dark mode brand accent */
-.dark .bg-primary-500, .dark .hover\:bg-primary-600:hover { background-color: #F99634 !important; color: #0B1F4B !important; }
+.dark .bg-primary-500 { background-color: #F99634 !important; color: #0B1F4B !important; }
+.dark .hover\:bg-primary-600:hover { background-color: #FEBF69 !important; color: #0B1F4B !important; }
 .dark .text-primary-500, .dark .text-primary-400 { color: #F99634 !important; }
 .dark .border-primary-500 { border-color: #F99634 !important; }
