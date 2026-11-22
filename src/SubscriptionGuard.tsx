@@ -659,8 +659,8 @@ function Wings8OSLogo() {
   return (
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <img
-        src="/logo-wings8-os-hero.png"
-        alt="Wings8"
+        src="/logo-wings8-os.png"
+        alt="Wings8 OS"
         style={{ height: '38px', width: 'auto', display: 'block' }}
       />
     </div>
