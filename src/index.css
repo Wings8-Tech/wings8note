@@ -104,3 +104,16 @@ dialog::backdrop {
 .dark .hover\:bg-primary-600:hover { background-color: #FEBF69 !important; color: #0B1F4B !important; }
 .dark .text-primary-500, .dark .text-primary-400 { color: #F99634 !important; }
 .dark .border-primary-500 { border-color: #F99634 !important; }
+
+/* Dark-mode brand consistency */
+.dark input[type="checkbox"] { accent-color: #F99634 !important; }
+.dark .text-primary-400,
+.dark .text-primary-600 { color: #FEBF69 !important; }
+.dark .text-blue-400,
+.dark .text-blue-500,
+.dark .text-blue-600,
+.dark .text-blue-700 { color: #FEBF69 !important; }
+.dark .bg-blue-50,
+.dark .bg-blue-900\/20 { background-color: rgba(249,150,52,0.12) !important; }
+.dark .border-blue-200,
+.dark .border-blue-800 { border-color: rgba(249,150,52,0.35) !important; }
