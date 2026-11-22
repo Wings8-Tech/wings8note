@@ -657,15 +657,10 @@ async function verifySubscription(): Promise<VerifyOutcome> {
 
 function Wings8OSLogo() {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px' }}>
-      <img
-        src="/logo-wings8-black.png"
-        alt="WINGS8"
-        style={{ height: '38px', width: 'auto', display: 'block' }}
-      />
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <img
         src="/logo-wings8-os-hero.png"
-        alt="OS"
+        alt="Wings8"
         style={{ height: '38px', width: 'auto', display: 'block' }}
       />
     </div>
