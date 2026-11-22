@@ -64,9 +64,16 @@ revoke all on function public.get_graph_data() from public, anon, authenticated;
 
 -- 3) Trigger helpers: revoke direct RPC execution and harden search_path.
 revoke all on function public.handle_new_user() from public, anon, authenticated;
-revoke all on function public.notes_search_vector_update() from public, anon, authenticated;
 revoke all on function public.update_updated_at_column() from public, anon, authenticated;
 
 alter function public.handle_new_user() set search_path = '';
-alter function public.notes_search_vector_update() set search_path = '';
 alter function public.update_updated_at_column() set search_path = '';
+
+do $$
+begin
+  if to_regprocedure('public.notes_search_vector_update()') is not null then
+    revoke all on function public.notes_search_vector_update() from public, anon, authenticated;
+    alter function public.notes_search_vector_update() set search_path = '';
+  end if;
+end;
+$$;
