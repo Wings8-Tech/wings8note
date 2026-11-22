@@ -22,9 +22,8 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 const LANG_STORAGE_KEY = 'wings8os_lang';
 
-// Langue initiale : choix persisté de l'utilisateur, sinon langue du
-// navigateur/système (en ou fr), sinon anglais. Les PWA suivent donc la
-// langue du système/navigateur par défaut.
+// Initial language: persist the user's choice; Wings8 defaults to English
+// regardless of the browser/system locale.
 function detectInitialLang(): Lang {
   try {
     const saved = localStorage.getItem(LANG_STORAGE_KEY);
@@ -32,19 +31,7 @@ function detectInitialLang(): Lang {
       return saved;
     }
   } catch {
-    /* stockage indisponible */
-  }
-  try {
-    const candidates: readonly string[] =
-      navigator.languages.length > 0 ? navigator.languages : [navigator.language];
-    for (const candidate of candidates) {
-      const short = candidate.toLowerCase().split('-')[0];
-      if (short === 'en' || short === 'fr') {
-        return short;
-      }
-    }
-  } catch {
-    /* navigator indisponible */
+    /* storage unavailable */
   }
   return 'en';
 }

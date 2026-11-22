@@ -38,12 +38,12 @@ module.exports = {
       colors: {
         // Primary Brand Colors
         primary: {
-          50: '#EDEFFD',
-          100: '#D5D9FA',
-          500: '#5a63e9',
-          600: '#4850d9',
-          900: '#3640c9',
-          DEFAULT: '#5a63e9',
+          50: '#EEF2F8',
+          100: '#D6E0EE',
+          500: '#0A1F4A',
+          600: '#081A3E',
+          900: '#050F25',
+          DEFAULT: '#0A1F4A',
         },
         // Neutral Structure Colors
         neutral: {

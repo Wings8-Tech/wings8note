@@ -887,8 +887,8 @@ export const translations: Record<Lang, Record<string, string>> = {
 };
 
 // Module-level language used by non-React code (services, hooks outside providers).
-// French by default for Wings8OS PWAs; kept in sync by the LanguageProvider.
-let currentLang: Lang = 'fr';
+// English is the product default for Wings8OS PWAs; kept in sync by the LanguageProvider.
+let currentLang: Lang = 'en';
 
 export function setI18nLang(lang: Lang) {
   currentLang = lang;

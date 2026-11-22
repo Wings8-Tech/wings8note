@@ -1,11 +1,12 @@
 {
-  "name": "Wings8note - Prise de Notes Intelligente",
+  "name": "Wings8note - Smart Notes",
   "short_name": "Wings8note",
-  "description": "Application de prise de notes intelligente avec graphe de connaissances et canvas",
+  "description": "Smart note-taking with a knowledge graph and canvas",
+  "lang": "en",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#6f75ec",
+  "theme_color": "#0A1F4A",
   "orientation": "any",
   "icons": [
     {
@@ -31,9 +32,9 @@
   "screenshots": [],
   "shortcuts": [
     {
-      "name": "Nouvelle note",
-      "short_name": "Nouvelle",
-      "description": "Créer une nouvelle note",
+      "name": "New note",
+      "short_name": "New",
+      "description": "Create a new note",
       "url": "/?action=new",
       "icons": [
         {
