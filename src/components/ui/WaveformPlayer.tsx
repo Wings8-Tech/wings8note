@@ -17,7 +17,7 @@ export default function WaveformPlayer({
   blob,
   height = 48,
   color = 'rgb(212, 212, 212)',
-  progressColor = '#5a63e9',
+  progressColor = '#0B1F4B',
 }: WaveformPlayerProps) {
   const { t } = useLanguage();
   const [isPlaying, setIsPlaying] = useState(false);

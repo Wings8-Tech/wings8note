@@ -40,10 +40,10 @@ module.exports = {
         primary: {
           50: '#EEF2F8',
           100: '#D6E0EE',
-          500: '#0A1F4A',
+          500: '#0B1F4B',
           600: '#081A3E',
           900: '#050F25',
-          DEFAULT: '#0A1F4A',
+          DEFAULT: '#0B1F4B',
         },
         // Neutral Structure Colors
         neutral: {

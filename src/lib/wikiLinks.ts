@@ -92,6 +92,6 @@ export function renderWikiLinksToHTML(
   return safeContent.replace(/\[\[([^\]]{1,200})\]\]/g, (match, linkText) => { // NOSONAR - safe pattern, negated char class with length limit
     // SECURITY: escape the link text before building HTML (attribute + body).
     const escapedText = escapeHtml(linkText);
-    return `<a href="#" class="wiki-link" data-note-title="${escapedText}" style="color: #5a63e9; text-decoration: underline; font-weight: 500;">${escapedText}</a>`;
+    return `<a href="#" class="wiki-link" data-note-title="${escapedText}" style="color: #0B1F4B; text-decoration: underline; font-weight: 500;">${escapedText}</a>`;
   });
 }

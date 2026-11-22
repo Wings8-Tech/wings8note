@@ -29,12 +29,12 @@ export default function DateFilter({ selectedDate, onSelectDate }: DateFilterPro
   const css = `
     .rdp {
       --rdp-cell-size: 40px;
-      --rdp-accent-color: #3b82f6;
+      --rdp-accent-color: #0B1F4B;
       --rdp-background-color: #eff6ff;
       margin: 0;
     }
     .dark .rdp {
-      --rdp-accent-color: #3b82f6;
+      --rdp-accent-color: #0B1F4B;
       --rdp-background-color: #1e3a8a;
       color: #e5e5e5;
     }

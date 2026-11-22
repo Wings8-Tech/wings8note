@@ -132,7 +132,7 @@ export default function MarkdownEditor({ value, onChange, onWikiLinkClick }: Mar
           '.cm-content': {
             padding: 'clamp(24px, 3vw, 64px)',
             minHeight: '100%',
-            caretColor: '#5a63e9',
+            caretColor: '#0B1F4B',
             maxWidth: '850px',
             margin: '0 auto',
           },
@@ -141,7 +141,7 @@ export default function MarkdownEditor({ value, onChange, onWikiLinkClick }: Mar
             padding: '0 clamp(8px, 0.5vw, 16px)',
           },
           '.cm-cursor': {
-            borderLeftColor: '#5a63e9',
+            borderLeftColor: '#0B1F4B',
             borderLeftWidth: '2px',
           },
           '.cm-gutters': {
@@ -149,7 +149,7 @@ export default function MarkdownEditor({ value, onChange, onWikiLinkClick }: Mar
             paddingRight: 'clamp(8px, 0.5vw, 12px)',
           },
           '.wiki-link': {
-            color: '#5a63e9',
+            color: '#0B1F4B',
             cursor: 'pointer',
             textDecoration: 'underline',
             fontWeight: '500',

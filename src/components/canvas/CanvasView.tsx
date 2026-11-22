@@ -102,7 +102,7 @@ export default function CanvasView({
           height: 200,
           content: note.content,
           title: note.title,
-          color: '#5a63e9',
+          color: '#0B1F4B',
         })),
     []
   );
@@ -155,7 +155,7 @@ export default function CanvasView({
               ...node,
               content: sourceNote.content,
               title: sourceNote.title,
-              color: node.color ?? '#5a63e9',
+              color: node.color ?? '#0B1F4B',
             };
             hasChanges = true;
           }
@@ -194,7 +194,7 @@ export default function CanvasView({
           height: NODE_HEIGHT,
           content: note.content,
           title: note.title,
-          color: '#5a63e9',
+          color: '#0B1F4B',
         });
         hasChanges = true;
       }
@@ -518,7 +518,7 @@ export default function CanvasView({
           height: NODE_HEIGHT,
           content: newNote.content,
           title: newNote.title,
-          color: '#5a63e9',
+          color: '#0B1F4B',
         };
         return [...prev, newNode];
       });
@@ -715,7 +715,7 @@ export default function CanvasView({
                   y1={y1}
                   x2={x2}
                   y2={y2}
-                  stroke="#5a63e9"
+                  stroke="#0B1F4B"
                   strokeWidth="2"
                   strokeDasharray="5,5"
                 />

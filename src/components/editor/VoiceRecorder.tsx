@@ -654,7 +654,7 @@ export default function VoiceRecorder({
                     className="flex-1 transition-all pointer-events-none rounded-full"
                     style={{
                       height: `${Math.max(8, value * 100)}%`,
-                      backgroundColor: isPassed ? '#5a63e9' : 'rgb(212, 212, 212)',
+                      backgroundColor: isPassed ? '#0B1F4B' : 'rgb(212, 212, 212)',
                     }}
                   />
                 );

@@ -369,7 +369,7 @@ export default function MarkdownPreview({ content, onWikiLinkClick }: MarkdownPr
 
       <style>{`
         .wiki-link {
-          color: #5a63e9;
+          color: #0B1F4B;
           cursor: pointer;
           text-decoration: underline;
           font-weight: 500;

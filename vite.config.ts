@@ -29,7 +29,7 @@ export default defineConfig({
         short_name: 'Wings8note',
         description:
           'Application de prise de notes professionnelle avec graphe de connaissances et canvas, optimisée pour Wings8OS',
-        theme_color: '#5a63e9',
+        theme_color: '#0B1F4B',
         background_color: '#FAFAFA',
         display: 'standalone',
         orientation: 'any',
